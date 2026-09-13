@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+}
+
+.form-label,
+.form-check-label,
+.legenda {
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  background-color: #00995d;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #00995d;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 768px) {
+  .filtrosEstoque label {
+    font-size: 0.8rem;
+  }
+}

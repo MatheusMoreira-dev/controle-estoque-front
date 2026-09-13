@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./global.css" />
+
+    <!--Css Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!--Icons Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <title>Estoque</title>
+  </head>
+
+  <body>
+    <header
+      class="container-md navbar navbar-expand-lg navbar-light bg-light px-4 mb-4"
+    >
+      <a class="navbar-brand" href="#">Home</a>
+    </header>
+
+    <main class="container-md p-4 bg-light h-100">
+      <!--Cabeçalho-->
+      <div class="d-flex justify-content-between gap-5 mb-4">
+        <div class="input-group">
+          <input id="pesquisa" type="text" class="form-control" />
+          <button class="btn btn-secondary text-nowrap">
+            <i class="bi bi-tag"></i>
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-primary text-nowrap">
+          <i class="bi bi-plus"></i>
+          <span class="d-none d-md-inline">Novo Item</span>
+        </button>
+      </div>
+
+      <!--Filtros-->
+      <div class="filtrosEstoque btn-group me-2 mb-2">
+        <input
+          id="filtroTodos"
+          type="radio"
+          value="todos"
+          name="filtroEstoque"
+          class="btn-check"
+          checked
+        />
+        <label for="filtroTodos" class="btn btn-outline-primary text-nowrap"
+          >Todos</label
+        >
+
+        <input
+          id="filtroComEstoque"
+          type="radio"
+          value="comEstoque"
+          name="filtroEstoque"
+          class="btn-check"
+        />
+        <label
+          for="filtroComEstoque"
+          class="btn btn-outline-primary text-nowrap"
+          >Com Estoque</label
+        >
+
+        <input
+          id="filtroSemEstoque"
+          type="radio"
+          value="todos"
+          name="filtroEstoque"
+          class="btn-check"
+        />
+        <label
+          for="filtroSemEstoque"
+          class="btn btn-outline-primary text-nowrap"
+          >Sem Estoque</label
+        >
+      </div>
+
+      <!--Lista de Itens-->
+      <div class="list-group d-flex flex-column gap-2 border-0">
+        <div class="list-group-item d-flex align-items-center border">
+          <div class="flex-fill d-flex gap-2 align-items-center">
+            <img alt="imagem" width="48px" height="48px" />
+            <h6 class="mb-0 text-nowrap">Título</h6>
+          </div>
+
+          <span class="badge rounded-pill bg-primary">10</span>
+        </div>
+
+        <div class="list-group-item d-flex align-items-center border">
+          <div class="flex-fill d-flex gap-2 align-items-center">
+            <img alt="imagem" width="48px" height="48px" />
+            <h6 class="mb-0 text-nowrap">Título</h6>
+          </div>
+
+          <span class="badge rounded-pill bg-primary">10</span>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <!--Script Bootstrap-->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>
