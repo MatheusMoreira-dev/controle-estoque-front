@@ -24,13 +24,11 @@
   </head>
 
   <body>
-    <header
-      class="container-md navbar navbar-expand-lg navbar-light bg-light px-4 mb-4"
-    >
+    <header class="container-md navbar navbar-expand-lg navbar-light px-4 mb-4">
       <a class="navbar-brand" href="#">Home</a>
     </header>
 
-    <main class="container-md p-4 bg-light h-100">
+    <main class="container-md p-4 h-100">
       <!--Cabeçalho-->
       <div class="d-flex justify-content-between gap-5 mb-4">
         <div class="input-group">
@@ -53,6 +51,7 @@
 
       <!--Filtros-->
       <div class="filtrosEstoque btn-group me-2 mb-2">
+        <!--Todos-->
         <input
           id="filtroTodos"
           type="radio"
@@ -62,9 +61,10 @@
           checked
         />
         <label for="filtroTodos" class="btn btn-outline-primary text-nowrap"
-          >Todos</label
-        >
+          >Todos<span id="total-todos" class="badge bg-primary"></span
+        ></label>
 
+        <!--Com Estoque-->
         <input
           id="filtroComEstoque"
           type="radio"
@@ -75,9 +75,11 @@
         <label
           for="filtroComEstoque"
           class="btn btn-outline-primary text-nowrap"
-          >Com Estoque</label
-        >
+          >Com Estoque
+          <span id="total-com-estoque" class="badge bg-primary"></span
+        ></label>
 
+        <!--Sem Estoque-->
         <input
           id="filtroSemEstoque"
           type="radio"
@@ -88,30 +90,16 @@
         <label
           for="filtroSemEstoque"
           class="btn btn-outline-primary text-nowrap"
-          >Sem Estoque</label
-        >
+          >Sem Estoque
+          <span id="total-sem-estoque" class="badge bg-primary"></span
+        ></label>
       </div>
 
       <!--Lista de Itens-->
-      <div class="list-group d-flex flex-column gap-2 border-0">
-        <div class="list-group-item d-flex align-items-center border">
-          <div class="flex-fill d-flex gap-2 align-items-center">
-            <img alt="imagem" width="48px" height="48px" />
-            <h6 class="mb-0 text-nowrap">Título</h6>
-          </div>
-
-          <span class="badge rounded-pill bg-primary">10</span>
-        </div>
-
-        <div class="list-group-item d-flex align-items-center border">
-          <div class="flex-fill d-flex gap-2 align-items-center">
-            <img alt="imagem" width="48px" height="48px" />
-            <h6 class="mb-0 text-nowrap">Título</h6>
-          </div>
-
-          <span class="badge rounded-pill bg-primary">10</span>
-        </div>
-      </div>
+      <div
+        id="itensNoCatalogo"
+        class="list-group d-flex flex-column gap-2 border-0"
+      ></div>
     </main>
 
     <!--Modal Form Novo Item-->
