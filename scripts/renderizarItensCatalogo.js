@@ -4,27 +4,28 @@ const listaItens = document.getElementById("itensNoCatalogo");
 function buildHtmlItem(dadosItem) {
   let strHTML;
 
+  const imagem = dadosItem.imagem
+    ? `<img class="img-fluid rounded bg-light border bg-secondary" loading="lazy" src= "${dadosItem.imagem}" alt="Sem Imagem"/>`
+    : `<div class="bg-secondary"></div>`;
+
   strHTML = `
       <div 
-        class="border rounded-3 shadow-sm mb-2 list-group-item list-group-item-action p-3 d-flex align-items-center" 
-        data-bs-toggle="modal" 
-        data-bs-target="#modalEditar"
+        class="list-group-item list-group-item-action p-2 d-flex align-items-center" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#detalhesItem"
+        style="cursor: pointer;"
       >
 
-        <div class="d-flex align-items-center justify-content-center bg-light rounded text-muted flex-shrink-0" style="width: 48px; height: 48px;">
-          <a href="${dadosItem.imagem}" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-image fs-4"></i>
-          </a>
+        <div class="d-flex align-items-center justify-content-center rounded text-muted flex-shrink-0" style="width: 64px; height: 64px;">
+          ${imagem}
         </div>
 
         <div class="flex-grow-1 px-3" style="min-width: 0;">
           <h6 class="m-0 text-truncate" title="${dadosItem.nomeItem}">${dadosItem.nomeItem}</h6>
         </div>
 
-        <div class="flex-shrink-0 text-end">
-          <span class="badge bg-light text-dark border">
-            Total: <strong>${dadosItem.estoque}</strong>
-          </span>
+        <div class="flex-shrink-0 text-end px-3">
+          <span class="badge bg-secondary border ${!dadosItem.temEstoque ? "d-none" : ""}">${dadosItem.estoque}</span>
         </div>
       </div>
     `;

@@ -32,6 +32,11 @@ form {
   opacity: 0.8;
 }
 
+#detalhesItem {
+  width: 600px;
+  max-width: 90dvw;
+}
+
 @media only screen and (max-width: 768px) {
   .filtrosEstoque label {
     font-size: 0.8rem;

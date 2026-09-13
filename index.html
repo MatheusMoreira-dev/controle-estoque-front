@@ -23,8 +23,8 @@
     <title>Estoque</title>
   </head>
 
-  <body>
-    <header class="container-md navbar navbar-expand-lg navbar-light px-4 mb-4">
+  <body class="overflow-y-hidden">
+    <header class="container-md navbar navbar-expand-lg navbar-light px-4">
       <a class="navbar-brand" href="#">Home</a>
     </header>
 
@@ -98,7 +98,7 @@
       <!--Lista de Itens-->
       <div
         id="itensNoCatalogo"
-        class="list-group d-flex flex-column gap-2 border-0"
+        class="list-group h-100 border-0 overflow-y-auto"
       ></div>
     </main>
 
@@ -125,6 +125,24 @@
           <div id="modalFormCadastro" class="modal-body"></div>
         </div>
       </div>
+    </div>
+
+    <!--OffCanvas Detalhes do item-->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="detalhesItem"
+      aria-labelledby="detalhesItem"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body"></div>
     </div>
   </body>
 
