@@ -1,0 +1,65 @@
+<div class="modal fade" id="formModalCatalogo">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">Novo Item</h6>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formCadastrarItem" class="d-flex flex-column gap-3">
+          <!--Upload do arquivo aqui-->
+          <div
+            class="d-flex flex-column h-100 gap-3 card bg-light border rounded p-4"
+          >
+            <!--Nome do Item-->
+            <div>
+              <label for="nomeItem" class="form-label">Item</label>
+              <input
+                type="text"
+                id="nomeItem"
+                name="nomeItem"
+                class="form-control"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <!--Categoria-->
+            <div>
+              <label for="categoria" class="form-label">Categoria</label>
+              <select id="categoria" name="categoria" class="form-select">
+                <option></option>
+                <option value="Brinde">Brinde</option>
+                <option value="Papelaria">Papelaria</option>
+                <option value="Institucional">Institucional</option>
+                <option value="Diretoria">Diretoria</option>
+                <option value="Embalagem">Embalagem</option>
+              </select>
+            </div>
+
+            <!--Descrição-->
+            <div class="d-flex flex-column flex-grow-1">
+              <label for="descricao" class="form-label">Descrição</label>
+              <textarea
+                id="descricao"
+                name="descricao"
+                class="form-control flex-grow-1"
+                style="resize: none; min-height: 100px"
+              ></textarea>
+            </div>
+
+            <button id="cadasrtrarItem" type="submit" class="btn btn-primary">
+              Cadastrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
