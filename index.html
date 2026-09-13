@@ -35,16 +35,17 @@
       <div class="d-flex justify-content-between gap-5 mb-4">
         <div class="input-group">
           <input id="pesquisa" type="text" class="form-control" />
-          <button
-            class="btn btn-secondary text-nowrap"
-            data-bs-toggle="modal"
-            data-bs-target="#formModalCatalogo"
-          >
+          <button class="btn btn-secondary text-nowrap">
             <i class="bi bi-tag"></i>
           </button>
         </div>
 
-        <button type="button" class="btn btn-primary text-nowrap">
+        <button
+          type="button"
+          class="btn btn-primary text-nowrap"
+          data-bs-toggle="modal"
+          data-bs-target="#formNovoItem"
+        >
           <i class="bi bi-plus"></i>
           <span class="d-none d-md-inline">Novo Item</span>
         </button>
@@ -80,7 +81,7 @@
         <input
           id="filtroSemEstoque"
           type="radio"
-          value="todos"
+          value="semEstoque"
           name="filtroEstoque"
           class="btn-check"
         />
@@ -112,6 +113,31 @@
         </div>
       </div>
     </main>
+
+    <!--Modal Form Novo Item-->
+    <div
+      class="modal fade"
+      id="formNovoItem"
+      tabindex="-1"
+      aria-labelledby="formNovoItem"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title">Novo Item</h6>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+
+          <div id="modalFormCadastro" class="modal-body"></div>
+        </div>
+      </div>
+    </div>
   </body>
 
   <!--Script Bootstrap-->
@@ -120,4 +146,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+
+  <script src="./app.js"></script>
 </html>
