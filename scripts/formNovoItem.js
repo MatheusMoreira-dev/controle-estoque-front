@@ -1,4 +1,4 @@
-import { CatalogoRoutes } from "./api";
+import { CatalogoRoutes } from "./api.js";
 
 const formNovoItem = document.getElementById("formNovoItem");
 

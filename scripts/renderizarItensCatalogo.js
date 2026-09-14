@@ -1,33 +1,33 @@
-const listaItens = document.getElementById("itensNoCatalogo");
+const cards = document.getElementById("cardsItensCatalogo");
 
-// Cria um novo item para a lista
-function buildHtmlItem(dadosItem) {
+function buildCard(dadosItem) {
   let strHTML;
 
-  const imagem = dadosItem.imagem
-    ? `<img class="img-fluid rounded bg-light border bg-secondary" loading="lazy" src= "${dadosItem.imagem}" alt="Sem Imagem"/>`
-    : `<div class="bg-secondary"></div>`;
-
   strHTML = `
-      <div 
-        class="list-group-item list-group-item-action p-2 d-flex align-items-center" 
-        data-bs-toggle="offcanvas" 
-        data-bs-target="#detalhesItem"
-        style="cursor: pointer;"
-      >
-
-        <div class="d-flex align-items-center justify-content-center rounded text-muted flex-shrink-0" style="width: 64px; height: 64px;">
-          ${imagem}
-        </div>
-
-        <div class="flex-grow-1 px-3" style="min-width: 0;">
-          <h6 class="m-0 text-truncate" title="${dadosItem.nomeItem}">${dadosItem.nomeItem}</h6>
-        </div>
-
-        <div class="flex-shrink-0 text-end px-3">
+    <div class="col">
+      <div class="card">
+        <div class="card-header d-flex gap-2 align-items-center">
           <span class="badge bg-secondary border ${!dadosItem.temEstoque ? "d-none" : ""}">${dadosItem.estoque}</span>
+          <h6 class="card-title m-0 text-truncate" title="${dadosItem.nomeItem}">${dadosItem.nomeItem}</h6>
+        </div>
+
+        <img src=${dadosItem.imagem} class="card-img-top" alt="Sem Imagem">
+        <div class="card-body"></div>
+
+        <div class="card-footer container">
+          <div class="row gap-1">
+            <button class="col btn btn-outline-success">
+              <i class="bi bi-plus"></i>
+              <span class="d-none d-md-inline">Entrada</span>
+            </button>
+            <button class="col btn btn-outline-danger">
+              <i class="bi bi-x"></i>
+              <span class="d-none d-md-inline">Saída</span>
+            </button>
+          </div>
         </div>
       </div>
+    </div>
     `;
 
   return strHTML;
@@ -35,10 +35,10 @@ function buildHtmlItem(dadosItem) {
 
 // Atualizar lista
 export function renderizarLista(itens) {
-  listaItens.innerHTML = "";
+  cards.innerHTML = "";
 
   let strHTML = "";
-  itens.forEach((v) => (strHTML += buildHtmlItem(v)));
+  itens.forEach((v) => (strHTML += buildCard(v)));
 
-  listaItens.innerHTML = strHTML;
+  cards.innerHTML = strHTML;
 }

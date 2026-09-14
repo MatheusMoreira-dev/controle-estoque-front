@@ -95,11 +95,13 @@
         ></label>
       </div>
 
-      <!--Lista de Itens-->
-      <div
-        id="itensNoCatalogo"
-        class="list-group h-100 border-0 overflow-y-auto"
-      ></div>
+      <!--Lista de Cards-->
+      <div class="container h-100 overflow-y-auto">
+        <div
+          id="cardsItensCatalogo"
+          class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"
+        ></div>
+      </div>
     </main>
 
     <!--Modal Form Novo Item-->
@@ -154,6 +156,6 @@
   ></script>
 
   <script type="module" src="./app.js"></script>
-  <script src="./scripts/formNovoItem.js"></script>
+  <script type="module" src="./scripts/formNovoItem.js"></script>
   <script src="./scripts/insertComponents.js"></script>
 </html>
