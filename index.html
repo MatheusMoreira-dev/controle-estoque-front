@@ -23,14 +23,14 @@
     <title>Estoque</title>
   </head>
 
-  <body class="overflow-y-hidden">
-    <header class="container-md navbar navbar-expand-lg navbar-light px-4">
+  <body class="container-md px-4 d-flex flex-column overflow-hidde">
+    <header class="mb-0 navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">Home</a>
     </header>
 
-    <main class="container-md p-4 h-100">
+    <main class="flex-grow-1 d-flex flex-column pb-5" style="min-height: 0">
       <!--Cabeçalho-->
-      <div class="d-flex justify-content-between gap-5 mb-4">
+      <div class="d-flex justify-content-between gap-5 pb-4">
         <div class="input-group">
           <input id="pesquisa" type="text" class="form-control" />
           <button class="btn btn-secondary text-nowrap">
@@ -50,7 +50,7 @@
       </div>
 
       <!--Filtros-->
-      <div class="filtrosEstoque btn-group me-2 mb-2">
+      <div class="align-self-start filtrosEstoque btn-group pb-2">
         <!--Todos-->
         <input
           id="filtroTodos"
@@ -91,22 +91,25 @@
           for="filtroSemEstoque"
           class="btn btn-outline-primary text-nowrap"
           >Sem Estoque
-          <span id="total-sem-estoque" class="badge bg-primary"></span
-        ></label>
+          <span id="total-sem-estoque" class="badge bg-primary"></span>
+        </label>
       </div>
 
       <!--Lista de Cards-->
-      <div class="container h-100 overflow-y-auto">
+      <div
+        class="overflow-x-hidden overflow-y-auto flex-grow-1"
+        style="min-height: 0"
+      >
         <div
           id="cardsItensCatalogo"
-          class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"
+          class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3"
         ></div>
       </div>
     </main>
 
     <!--Modal Form Novo Item-->
     <div
-      class="modal fade"
+      class="modal fade modal-lg modal-fullscreen-md-down"
       id="formNovoItem"
       tabindex="-1"
       aria-labelledby="formNovoItem"

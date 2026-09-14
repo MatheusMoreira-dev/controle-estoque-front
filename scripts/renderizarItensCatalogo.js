@@ -4,7 +4,7 @@ function buildCard(dadosItem) {
   let strHTML;
 
   strHTML = `
-    <div class="col">
+    <div class="col" data-bs-toggle="offcanvas" data-bs-target="#detalhesItem" aria-controls="detalhesItem" style="cursor: pointer;">
       <div class="card">
         <div class="card-header d-flex gap-2 align-items-center">
           <span class="badge bg-secondary border ${!dadosItem.temEstoque ? "d-none" : ""}">${dadosItem.estoque}</span>
